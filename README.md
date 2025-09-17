@@ -13,14 +13,14 @@ This pipeline is structured to accomplish the following tasks:
 ![Pipeline Architecture](RedditDataEngineering.png)
 
 ## Components - 
--**Docker**: Containerization platform that packages applications and their dependencies
--**Apache Airflow**: orchestrator for scheduling and managing ETL workflows
--**Celery**: Facilitates distributed task execution, enhancing scalability and performance
--**PostgreSQL**: Utilized for intermediate data storage and manipulation
--**AWS S3**: Provides storage for raw and processed data
--**AWS Glue**: provides automated ETL service for transformation and loading
--**AWS Athena**: Enables querying data directly from S3
--**AWS Redshift**: Datawarehouse to load transformed and aggregated Reddit data
+- Docker: Containerization platform that packages applications and their dependencies
+- Apache Airflow: orchestrator for scheduling and managing ETL workflows
+- Celery: Facilitates distributed task execution, enhancing scalability and performance
+- PostgreSQL: Utilized for intermediate data storage and manipulation
+- AWS S3: Provides storage for raw and processed data
+- AWS Glue: provides automated ETL service for transformation and loading
+- AWS Athena: Enables querying data directly from S3
+- AWS Redshift: Datawarehouse to load transformed and aggregated Reddit data
 
 ## Requirements -:
 - AWS Account
