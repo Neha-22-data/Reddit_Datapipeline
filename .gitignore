@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environments
+venv/
+myenv/
+.env/
+*.env
+
+# Airflow related
+airflow.db
+airflow.cfg
+logs/
+dags/__pycache__/
+plugins/__pycache__/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid

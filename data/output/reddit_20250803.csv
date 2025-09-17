@@ -1,0 +1,231 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1mfx209,I used to think data engineering was a small specialty of software engineering. I was very mistaken.,"I've had a 25 year career as a software engineer and architect. Most of my concerns have revolved around the following things:
+
+- Application scalability, availability, and security.
+- Ensuring that what we were building addressed the business needs without getting lost in the weeds.
+- UX concerns like ensuring everything functioned on mobile platforms and legacy web browsers.
+- DevOps stuff: How do we quickly ship code as fast as possible to accelerate product delivery, yet still catch regression defects early and not blow up things?
+
+- Mediating organizational conflicts: Product owner wants us to go faster but infosec wants us to go slower, existing customers are complaining about latency due to legacy code but we're also losing new customers because we're losing ground to competitors due to lack of new features. 
+
+I've been vaguely aware of data engineering for years but never really thought about it. If you had asked me, I probably would have said *""Yeah, those are the guys who keep Power BI fed and running. I'm sure they've probably repurposed DevOps workflows to help with that.""*
+
+However, recently a trap door opened under me as I've been trying to help deliver a different kind of product. I fell into the world of data engineering and am shocked at how foreign it actually is.
+
+Data lineage, feature stores, Pandas vs Polars, Dask, genuinely saturating dozens of cores and needing half a TB of RAM (in the app dev world, hardware is rarely a legit constraint and if it is, we easily horizontally scale), having to figure out what kind of GPU we need and where to optimally use that in the pipeline vs just distributing to a bunch of CPUs, etc. Do we use PCA reduction on these SBERT embeddings or not?
+
+Even simple stuff like ""what is a 'feature'?"" took some time to wrap my head around. *""Dude, it's a column. Why do we need a new word for that?""*
+
+Anyhow... I never disrespected data people, I just didn't know enough about the discipline to have an opinion at all. However, I definitely have found a lot of respect for the wizards of this black art. I guess if I had to pass along any advice, it would be that I think that most of my software engineering brethren are equally ignorant about data engineering. When they wander into your lane and start stepping on your toes, try not to get too upset.",322,54,big_like_a_pickle,2025-08-02 18:04:04,https://www.reddit.com/r/dataengineering/comments/1mfx209/i_used_to_think_data_engineering_was_a_small/,0.96,False,False,False,False
+1mfnphn,Best certifications to take for a data engineer?,"Hi all,
+
+Been working as a data engineer for the past 2.5 years. I have been looking to change roles soon and am wondering what certifications would look nice on my cv? 
+
+I have been working in Azure Databricks recently and am well across that, so I'm thinking of taking certs in other cloud technologies just to show recruiters that I am capable in working in them. 
+
+Would anyone have any recommendations?
+
+  
+Thanks!",58,30,Short-Delivery-5278,2025-08-02 10:56:38,https://www.reddit.com/r/dataengineering/comments/1mfnphn/best_certifications_to_take_for_a_data_engineer/,0.88,False,False,False,False
+1mforgf,Real-time data pipeline with late arriving IoT,"I am working on a real-time pipeline for a logistics client where we ingest millions of IoT events per hour from our vehicle fleet. Things like GPST, engine status, temperature, etc. We’re currently pushing this data through Kafka using Kafka Connect + Debezium to land it in Snowflake.
+
+It got us far but now we are starting to see trouble as data scales.
+
+One. We are consistently losing or misprocessing late arriving events from edge devices in poorer connectivity zones. Even with event timestamps and buffer logic in Spark, we end up with duplicated records or gaps in aggregation windows.
+
+And two. Schema drift is also messing things up. Whenever the hardware team updates firmware or adds new sensor types, the structure of the incoming data changes slightly which breaks something downstream.We have tried enforcing Avro schemas via Schema Registry but it does not do that well when things evolve quickly.
+
+To make things even worse, our Snowflake MERGE operations are starting to fizzle under load. Clustered tables help but not enough. 
+
+We are debating whether to continue building around this setup with more Spark jobs and glue code, or switch to something more managed that can handle real-time ingestion and late arrival tolerance. Would like not having to spin up a full lakehouse or manage Flink.
+
+Any thoughts or insights that can help us get out of this mess?
+
+EDIT - Fixed typo.",32,14,Individual-Durian952,2025-08-02 11:57:58,https://www.reddit.com/r/dataengineering/comments/1mforgf/realtime_data_pipeline_with_late_arriving_iot/,0.94,False,False,False,False
+1mfohjj,How many of you use Go?,"I see a lot of people ask questions on how to get started in DE or people who are at early career stage in DE. However, my question is to mid-to-senior level engineers if they use Go or they see the need to use Go in their work? Or Python helps you solve most of your problems! 
+
+Thanks! Cheers! ",29,33,rtalpade,2025-08-02 11:42:24,https://www.reddit.com/r/dataengineering/comments/1mfohjj/how_many_of_you_use_go/,0.97,False,False,False,False
+1mg5tjl,Data Engineer vs Tech Consulting,"I recently received two internship offers:
+1. Data Engineer Intern at a local Telco company
+2. Consulting Intern at Accenture
+
+A little context about myself:
+I major in data science but not really superb at coding though i still enjoy learning it, so would still prefer working with tech. On the other hand, tech consulting is not something that i am familiar with but am willing to try if its a good career.
+
+What are your thoughts? Which would you choose for your first internship?",26,18,Medical-Agency4293,2025-08-03 00:36:00,https://www.reddit.com/r/dataengineering/comments/1mg5tjl/data_engineer_vs_tech_consulting/,0.91,False,False,False,False
+1mfrvpt,"Iceberg, The Right Idea - The Wrong Spec - Part 2 of 2: The Spec",https://www.database-doctor.com/posts/iceberg-is-wrong-2.html,18,21,Unique_Emu_6704,2025-08-02 14:28:12,https://www.reddit.com/r/dataengineering/comments/1mfrvpt/iceberg_the_right_idea_the_wrong_spec_part_2_of_2/,0.77,False,False,False,False
+1mg3oka,What tools are you using for extract and load then using dbt in snowflake,"If your Company using dbt, snowflake then what tool are you using for Extract and Load into snowflake. What is the best",19,14,Returnforgood,2025-08-02 22:53:04,https://www.reddit.com/r/dataengineering/comments/1mg3oka/what_tools_are_you_using_for_extract_and_load/,1.0,False,False,False,False
+1mg4cqz,Domain Knowlege in Data Engineering,"Why is it so difficult to work for a company as a data engineer and to develop domain specific knowledge? 
+
+For example, this might include being a data engineer in a healthcare company or being a data engineer at a financial company, and expecting that you will develop healthcare or financial domain knowledge. 
+
+From my past experience, data modelers have more domain knowledge but these types of positions are usually the most desired and most difficult to get within the company. Even better if you can get some analyst experience and have data engineering experience. This will get you a seat at the table with more important business stakeholders.
+
+I had a lot of hope that I would develop this type of domain knowledge, but I ended up just being assigned data platform work or data ingestion work where domain knowledge is almost not required 
+
+Even after asking to be moved to positions that provide this kind of experience, I am not provided with those opportunities. ",15,7,Guilty-Commission435,2025-08-02 23:24:30,https://www.reddit.com/r/dataengineering/comments/1mg4cqz/domain_knowlege_in_data_engineering/,1.0,False,False,False,False
+1mfx5u8,Released an Airflow provider that makes DAG monitoring actually reliable,"Hey everyone!
+
+We just released an open-source Airflow provider that solves a problem we've all faced - getting reliable alerts when DAGs fail or don't run on schedule. Disclaimer: we created the Telomere service that this integrates with.
+
+With just a couple lines of code, you can monitor both schedule health (""did the nightly job run?"") and execution health (""did it finish within 4 hours?""). The provider automatically configures timeouts based on your DAG settings:
+
+    from telomere_provider.utils import enable_telomere_tracking
+    
+    # Your existing DAG, scheduled to run every 24 hours with a 4 hour timeout...
+    dag = DAG(""nightly_dag"", ...)
+    
+    # Enable tracking with one line!
+    enable_telomere_tracking(dag)
+
+It integrates with Telomere which has a free tier that covers 12+ daily DAGs. We built this because Airflow's own alerting can fail if there's an infrastructure issue, and external cron monitors miss when DAGs start but die mid-execution.
+
+Check out the [blog post](https://modulecollective.com/posts/telomere-airflow-provider/) or go to [https://github.com/modulecollective/telomere-airflow-provider](https://github.com/modulecollective/telomere-airflow-provider) to check out the code.
+
+Would love feedback from folks who've struggled with Airflow monitoring!",10,1,slackpad,2025-08-02 18:08:31,https://www.reddit.com/r/dataengineering/comments/1mfx5u8/released_an_airflow_provider_that_makes_dag/,0.92,False,False,False,False
+1mgd190,Any Substack worth subbing to for technical writings (non high-level or industry trends chat)?,Hope everyone’s having a good weekend! Are there any good Substack writers which people pay a subscription to for technical deep dives in simplified and engaging language? I wanna see if I can ask my manager to approve subs to a couple of writers.,7,0,jnrdataengineer2023,2025-08-03 07:16:49,https://www.reddit.com/r/dataengineering/comments/1mgd190/any_substack_worth_subbing_to_for_technical/,0.89,False,False,False,False
+1mg9in8,"Elusion v3.13.2 Data Engineering Library, is ready to read ALL files from folders (Local and SharePoint)","Newest Elusion release has multiple new features, 2 of those being:
+
+1. LOADING data from LOCAL FOLDER into DataFrame
+2. LOADING data from SharePoint FOLDER into DataFrame
+
+What this features do for you:
+
+# - Automatically loads and combines multiple files from a folder
+
+# - Handles schema compatibility and column reordering automatically
+
+# - Uses UNION ALL to combine all files (keeping all rows)
+
+# - Supports CSV, EXCEL, JSON, and PARQUET files
+
+# 3 arguments needed: Folder Path, File Extensions Filter (Optional), Result Alias
+
+Example usage for **Local Folder**:
+
+    // Load all supported files from folder
+    let combined_data = CustomDataFrame::load_folder(
+       ""C:\\BorivojGrujicic\\RUST\\Elusion\\SalesReports"",
+       None, // Load all supported file types (csv, xlsx, json, parquet)
+       ""combined_sales_data""
+    ).await?;
+    
+    // Load only specific file types
+    let csv_excel_data = CustomDataFrame::load_folder(
+       ""C:\\BorivojGrujicic\\RUST\\Elusion\\SalesReports"", 
+       Some(vec![""csv"", ""xlsx""]), // Only load CSV and Excel files
+       ""filtered_data""
+    ).await?;
+
+Example usage for **SharePoint Folder**:  
+**\*\*\*** To be able to load data from SharePoint Folder you need to be logged in with AzureCLI localy.
+
+    let dataframes = CustomDataFrame::load_folder_from_sharepoint(
+        ""your-tenant-id"",
+        ""your-client-id"", 
+        ""http://companyname.sharepoint.com/sites/SiteName"", 
+        ""Shared Documents/MainFolder/SubFolder"",
+        None, // None will read any file type, or you can filter by extension vec![""xlsx"", ""csv""]
+        ""combined_data"" //dataframe alias
+    ).await?;
+    
+    dataframes.display().await?;
+
+There are couple more useful functions like:  
+**load\_folder\_with\_filename\_column()** for Local Folder,  
+**load\_folder\_from\_sharepoint\_with\_filename\_column()** for SharePoint folder  
+which automatically add additional column with file name for each row of that file.  
+This is great for Time based Analysis if file names have date in their name.
+
+To learn more about these functions, and other ones, check out README file in repo: [https://github.com/DataBora/elusion](https://github.com/DataBora/elusion)",8,0,DataBora,2025-08-03 03:47:54,https://www.reddit.com/r/dataengineering/comments/1mg9in8/elusion_v3132_data_engineering_library_is_ready/,1.0,False,False,False,False
+1mg9zn8,EPAM Data engineer,"I have recently cleared EPAM for data engineer role, and would like to know what is the componsation range I can expect. Considering the fact that I can get counter offers later so how much does EPAM India pay?
+
+YOE : 4y4m
+Tech stack : GCP data engineer ",6,3,Junior_End_6887,2025-08-03 04:13:40,https://www.reddit.com/r/dataengineering/comments/1mg9zn8/epam_data_engineer/,0.88,False,False,False,False
+1mg0d65,"Can anyone help me understand data ingestion system design for compliance/archival domain please? I am an experienced product manager working on strategy part but got an opportunity to be platform PM and so began exploring and feel this field is exciting, so can anyone help me clarify my doubts?","I’m preparing for a platform PM role focused solely on data ingestion for a compliance archiving product — specifically for ingesting large volumes of data like emails, Teams messages, etc., to be archived for regulatory purposes.
+
+**Product Context:**
+
+* Ingests millions of messages per day
+* Data is archived for **compliance** (auditor/regulator use)
+* There’s a separate downstream product for **analytics/recommendations** (customer-facing, not in this role's scope)
+
+**Key Non-Functional Requirements (NFRs):**
+
+* **Scalability**: Handle millions of messages daily
+* **Resiliency**: Failover support — ingestion should continue even if a node fails
+* **Availability & Reliability**: No data loss, always-on ingestion
+
+**Tech Stack (shared by recruiter):**  
+Java, Spring Boot, Event-Driven Microservices, Kubernetes, Apache Pulsar, Zookeeper, Ceph, Prometheus, Grafana
+
+**My Current Understanding of Data Flow:** ***is this correct or am i missing anything?***
+
+    TEAMS (or similar sources)  
+      ↓  
+    REST API  
+      ↓  
+    PULSAR (as message broker)  
+      ↓  
+    CEPH (object storage for archiving)  
+      ↑  
+    CONSUMERS (downstream services) ←───── PULSAR
+
+**Key Questions:**
+
+1. For compliance purposes (where reliability is critical), **should we persist data immediately upon ingestion, before any transformation?**
+2. In this role, do we **own the data transformation/normalization** step as well? If so, **where does that happen in the flow** — pre- or post-Pulsar?
+3. Given the use of Pulsar and focus on real-time ingestion, can we **assume this is a streaming-only system**, with no batch processing involved?
+
+Would appreciate feedback on whether the above architecture makes sense for a compliance-oriented ingestion system, and any critical considerations I may have missed.
+
+Edit: FYI I used chatgpt for formatting/coherence as my quesitons were all over the place and hence deleted my old post which has questions all over the place
+
+using chtgpt for system design is too overwhelming as its givign so many design flows, say if i have a doubt or question and ask it then it gives back a new design flow, so its geting little exhausting. I am studying/understanding from DDIA so its been little tough to use chatpt for implemnetation or system design it due to lack of my in depth technical aptitude to sift through all the noise of answers and my questions too
+
+Edit 2: i realise recruiter telling me theres also an **aerospike cache** , which i am not sure where its used, considerign its cache, so for retrieval so it means once pulsar writes to ceph at that stage?",6,6,Just_A_Stray_Dog,2025-08-02 20:25:56,https://www.reddit.com/r/dataengineering/comments/1mg0d65/can_anyone_help_me_understand_data_ingestion/,0.81,False,False,False,False
+1mg7imy,Powercenter to apache hop,Has anyone tried converting powercenter jobs to apache hop ? ,3,0,Optimal_Cod1818,2025-08-03 02:02:59,https://www.reddit.com/r/dataengineering/comments/1mg7imy/powercenter_to_apache_hop/,1.0,False,False,False,False
+1mg5xyq,Can I use a COPY batch insert with a conditional?,"I need the batch insert to insert all but all insertions that already exist.
+
+Seeing if I can do this with COPY for high performance.",3,2,Competitive-Nail-931,2025-08-03 00:42:12,https://www.reddit.com/r/dataengineering/comments/1mg5xyq/can_i_use_a_copy_batch_insert_with_a_conditional/,0.8,False,False,False,False
+1mgfbyc,Made a Telegram job trigger(it ain't much but its honest work),"Built this out of pure laziness 
+A lightweight Telegram bot that lets me: 
+- Get Databricks job alerts
+- Check today’s status
+- Repair failed runs
+- Pause/reschedule ,
+All from my phone.
+No laptop. No dashboard. Just / Commands.",1,1,Anu_Rag9704,2025-08-03 09:49:13,https://i.redd.it/t1h57s4i0sgf1.jpeg,0.6,False,False,False,False
+1mgeel0,Databricks/PySpark best practices,"Hello, i'm starting a project at work soon to migrate our on-prem data warehouse to Databricks with an ADLS Gen2 storage layer. Do you guys have any best practices for writing notebooks, implementing CI/CD, ADF and generaly pyspark stuff? I'm also looking for good learning materials. Maybe you have something that helped you learn, because besides knowing Python, I'm a bit new to it.",1,2,Express-Figure-5793,2025-08-03 08:47:02,https://www.reddit.com/r/dataengineering/comments/1mgeel0/databrickspyspark_best_practices/,0.6,False,False,False,False
+1mg42us,Recruited to Starrocks,"Hi all.  I received a random text from a recruiter at G-P company.  They forwarded my information to someone who represents Starrocks.  She stated they employ workers to help optimize the data traffic and ranking of apps to attract more users to download and use them.  She ended up sending me a url link to the Starrocks app where I was able to create a work account.  She then had me take a screen shot of ""my invitation code"" so she could create a training account.  I guess by her having this invitation code she now receives 20% of my earnings.
+
+  
+I was approaching this with great hesitancy because I figured this was just another scam text but as I slowly responded it started to seem like it had some legitimacy.  The anonymity of it all still has me very nervous.  No one was able to provide me a LinkedIn profile (the recruiter nor the trainer).  On top of it all this is the first time I've even heard of Starrocks so I am unsure what I am getting into.  After sharing my invitation code with her I got cold feet and told her I needed to research this more before I proceeded forward and she very politely obliged (which I wouldn't have expected if this was a scam).
+
+  
+Does this sound sketchy?  Am I being scammed or is this a legitimate work offer?  All of our communication has been through WhatsApp.  Any and all information about this is appreciated and I would be happy to provide answers to any questions you might have.  I am certainly intrigued but also very hesitant as this is not a world I am familiar with at all.
+
+  
+Thanks much!",0,6,mountainsydeserts,2025-08-02 23:11:45,https://www.reddit.com/r/dataengineering/comments/1mg42us/recruited_to_starrocks/,0.4,False,False,False,False
+1mfvn34,Azure key vault backed secret Scope issue,"I was trying to create a azure key vault backed secret scope in databricks using UI. I noticed that even after giving access to ""databricks managed resource group's"" managed identity, I was unable to retreieve the secret from key vault.
+
+I believe default service principal is different from what is present at managed resource group which is why it is giving insufficient permission error.
+
+I have watched videos where they have assigned ""Databricks"" as a managed identity in azure role assignment which will provide access to all workspaces. But I do not see that in my role assignment window. Maybe they do not provide this on premium workspaces for better access control.
+
+For reference I am working on premium databricks workspace on azure free trial.",0,1,i_aM-Abhi,2025-08-02 17:04:52,https://www.reddit.com/r/dataengineering/comments/1mfvn34/azure_key_vault_backed_secret_scope_issue/,0.4,False,False,False,False
+1mfoitd,Need Guidance : Oracle GoldenGate to Data Engineer,"I’m currently working as an Oracle GoldenGate (GG) Administrator. Most of my work involves setting up and managing replication from Oracle databases to Kafka and MongoDB. I handle extract/replicat configuration, monitor lag, troubleshoot replication errors, and work on schema-level syncs.
+
+Now I’m planning to transition into a Data Engineering role — something that’s more aligned with building data pipelines, transformations, and working with large-scale data systems.
+
+I’d really appreciate some guidance from those who’ve been down a similar path or work in the data field:
+
+1. What key skills should I focus on?
+
+2. How can I leverage my 2 years of GG experience?
+
+3. Certifications or Courses you recommend?
+
+4. Is it better to aim for junior DE roles?
+
+",0,2,Ill_Swimmer3873,2025-08-02 11:44:25,https://www.reddit.com/r/dataengineering/comments/1mfoitd/need_guidance_oracle_goldengate_to_data_engineer/,0.43,False,False,False,False

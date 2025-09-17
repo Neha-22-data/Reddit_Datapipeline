@@ -1,0 +1,167 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1mf5ccy,Why don’t companies hire for potential anymore?,"I moved from DS to DE 3 years ago and I was hired solely based on my strong Python and SQL skills and learned everything else on the job.  
+  
+But lately it feels like companies only want to hire people who’ve already done the exact job before with the exact same tools. There’s no room for learning on the job even if you have great fundamentals or experience with similar tools.
+
+Is this just what happens when there’s more supply than demand?",187,58,AdNext5396,2025-08-01 19:09:22,https://www.reddit.com/r/dataengineering/comments/1mf5ccy/why_dont_companies_hire_for_potential_anymore/,0.96,False,False,False,False
+1meupk9,DocStrange - Open Source Document Data Extractor,"Sharing **DocStrange**, an open-source Python library that makes document data extraction easy.
+
+* **Universal Input**: PDFs, Images, Word docs, PowerPoint, Excel
+* **Multiple Outputs**: Clean Markdown, structured JSON, CSV tables, formatted HTML
+* **Smart Extraction**: Specify exact fields you want (e.g., ""invoice\_number"", ""total\_amount"")
+* **Schema Support**: Define JSON schemas for consistent structured output
+
+**Data Processing Options**
+
+* **Cloud Mode**: Fast and free processing with minimal setup
+* **Local Mode**: Complete privacy - all processing happens on your machine, no data sent anywhere, works on both cpu and gpu
+
+**Quick start:**
+
+    from docstrange import DocumentExtractor
+    
+    extractor = DocumentExtractor()
+    result = extractor.extract(""research_paper.pdf"")
+    
+    # Get clean markdown for LLM training
+    markdown = result.extract_markdown()
+
+**CLI**
+
+    pip install docstrange
+    docstrange document.pdf --output json --extract-fields title author date
+
+**Links:**
+
+* PyPI: [https://pypi.org/project/docstrange/](https://pypi.org/project/docstrange/)
+* Github: [https://github.com/NanoNets/docstrange](https://github.com/NanoNets/docstrange)",93,5,LostAmbassador6872,2025-08-01 12:07:00,https://www.reddit.com/gallery/1meupk9,0.97,False,False,False,False
+1mf60lt,Cloud Providers,"Do you thing Google is falling behind in the cloud war?
+In Italy where i work i see less job positions that require GCP as primary cloud provider.
+What's you experience?",19,16,_-_-ITACHI-_-_,2025-08-01 19:35:48,https://www.reddit.com/r/dataengineering/comments/1mf60lt/cloud_providers/,0.95,False,False,False,False
+1mf11dd,we build out horizontal scaling for Snowflake Standard accounts to reduce queuing!,"One of our customers was seeing significant queueing on their workloads. They're using Snowflake Standard so they don't have access to horizontal scaling. They also didn't want to permanently upsize their warehouse and pay 2x or 4x the credits while their workloads can run on a Small.
+
+So we built out a way to direct workloads to additional warehouses whenever we start seeing queued workloads.
+
+Setup is easy, simply create as many new warehouses as you'd like as additional clusters and we'll assign the workloads accordingly.
+
+We're looking for more beta testers, please reach out if you've got a lot of queueing!",15,17,hornyforsavings,2025-08-01 16:26:02,https://i.redd.it/elhbxzcgpfgf1.png,0.81,False,False,False,False
+1mf0ivp,Need justification for not using Talend,"Just like it says - I need reasons for not using Talend!
+
+For background, I just got hired into a new place, and my manager was initially hired for the role I'm filling.  When he was in my place he decided to use Talend with Redshift.  He's quite proud of this, and wants every pipeline to use Talend.
+
+My fellow engineers have found workarounds that minimize our exposure to it, and are basically using it for orchestration only, so the boss is happy.
+
+We finally have a new use case, which will be, as far as I can tell, the first streaming pipeline we'll have.  I'm setting up a webhook to API Gateway to S3 and want to use MSK to a processed bucket (i.e. Silver layer), and then send to Redshift. Normally I would just have a Lambda run an insert, but the boss also wants to reduce our reliance on that because ”it's too messy”.  (Also if you have recommendations for better architecture here I'm open to ideas).
+
+Of course the boss asked me to look into Talend to do the whole thing. I'm fine with using it to shift from S3 to Redshift to keep him happy, but would appreciate some examples of why not to use Talend streaming over MSK.
+
+Thank you in advance r/dataengineering community!",8,18,ccesta,2025-08-01 16:06:33,https://www.reddit.com/r/dataengineering/comments/1mf0ivp/need_justification_for_not_using_talend/,0.83,False,False,False,False
+1mfdc4h,Using protobuf as very large file format on S3,Check out an article I wrote [https://medium.com/@unclepaul84/efficiently-reading-and-writing-very-large-protobuf-files-local-disk-and-s3-approaches-a289c8855606](https://medium.com/@unclepaul84/efficiently-reading-and-writing-very-large-protobuf-files-local-disk-and-s3-approaches-a289c8855606),5,0,Far_Spirit_4251,2025-08-02 00:52:25,https://www.reddit.com/r/dataengineering/comments/1mfdc4h/using_protobuf_as_very_large_file_format_on_s3/,0.7,False,False,False,False
+1mex2l1,Coursera IBM course,"Anyone has an experince with [this IBM](https://www.coursera.org/professional-certificates/ibm-data-engineer) course from coursera to share your feedback? Also if it is not good, do you have any other recommendations? I'm still studying computer engineering and I am looking for a job as a data engineer after I graduate next January. I have knowledge in Python, SQL, and database managment systems from school.",7,4,Quiet_Bad_8675,2025-08-01 13:52:14,https://www.reddit.com/r/dataengineering/comments/1mex2l1/coursera_ibm_course/,1.0,False,False,False,False
+1mforgf,Real-time data pipeline with late arriving IoT,"I am working on a real-time pipeline for a logistics client where we ingest millions of IoT events per hour from our vehicle fleet. Things like GPST, engine status, temperature, etc. We’re currently pushing this data through Kafka using Kafka Connect + Debezium to land it in Snowflake.
+
+It got us far but now we are starting to see trouble as data scales.
+
+One. We are consistently losing or misprocessing late arriving events from edge devices in poorer connectivity zones. Even with event timestamps and buffer logic in Spark, we end up with duplicated records or gaps in aggregation windows.
+
+And two. Schema drift is also messing things up. Whenever the hardware team updates firmware or adds new sensor types, the stucture of income data changes slightly whihc breaks something downstream. We have tried enforcing Avro schemas via Schema Registry but it does not do that well when things evolve quickly.
+
+To make things even worse, our Snowflake MERGE operations are starting to fizzle under load. Clustered tables help but not enough. 
+
+We are debating whether to continue building around this setup with more Spark jobs and glue code, or switch to something more managed that can handle real-time ingestion and late arrival tolerance. Would like not having to spin up a full lakehouse or manage Flink.
+
+Any thoughts or insights that can help us get out of this mess?",5,0,Individual-Durian952,2025-08-02 11:57:58,https://www.reddit.com/r/dataengineering/comments/1mforgf/realtime_data_pipeline_with_late_arriving_iot/,1.0,False,False,False,False
+1mfohjj,How many of you use Go?,"I see a lot of people ask questions on how to get started in DE or people who are at early career stage in DE. However, my question is to mid-to-senior level engineers if they use Go or they see the need to use Go in their work? Or Python helps you solve most of your problems! 
+
+Thanks! Cheers! ",5,5,rtalpade,2025-08-02 11:42:24,https://www.reddit.com/r/dataengineering/comments/1mfohjj/how_many_of_you_use_go/,1.0,False,False,False,False
+1mf0sdy,"Would a curated marketplace for exclusive, verified datasets solve a real gap? Testing an MVP","I’m exploring an MVP to address a challenge I see often in data workflows: sourcing **high-quality, trustworthy datasets** without duplicates or unclear provenance.
+
+The concept is a marketplace designed for data professionals that offers:
+
+* *1-of-1 exclusive* datasets (no mass reselling)
+* Escrow-protected transactions to ensure trust
+* Strict metadata and documentation standards
+* Verified sellers to guarantee data authenticity
+
+For data engineers and pipeline builders:
+
+* Would a platform like this solve a gap you face when sourcing data?
+* What metadata or schema standards would you consider must-have?
+* Any advice for integrating a marketplace like this into ETL/ELT workflows?
+
+Would really value insights from this community — share your thoughts in the comments.",4,18,Brilliant-Draft2472,2025-08-01 16:16:35,https://www.reddit.com/r/dataengineering/comments/1mf0sdy/would_a_curated_marketplace_for_exclusive/,0.64,False,False,False,False
+1mezenu,Postgres psql Power Tips: 10 Meta‑Commands Every Beginner Should Know,[https://medium.com/@rohansodha10/psql-power-tips-10-meta-commands-every-beginner-should-know-adc1593b28f2?sk=36e195f7c016fe634939b95a6f957208](https://medium.com/@rohansodha10/psql-power-tips-10-meta-commands-every-beginner-should-know-adc1593b28f2?sk=36e195f7c016fe634939b95a6f957208),3,0,Temporary_Depth_2491,2025-08-01 15:24:15,https://www.reddit.com/r/dataengineering/comments/1mezenu/postgres_psql_power_tips_10_metacommands_every/,0.64,False,False,False,False
+1mfnphn,Best certifications to take for a data engineer?,"Hi all,
+
+Been working as a data engineer for the past 2.5 years. I have been looking to change roles soon and am wondering what certifications would look nice on my cv? 
+
+I have been working in Azure Databricks recently and am well across that, so I'm thinking of taking certs in other cloud technologies just to show recruiters that I am capable in working in them. 
+
+Would anyone have any recommendations?
+
+  
+Thanks!",3,11,Short-Delivery-5278,2025-08-02 10:56:38,https://www.reddit.com/r/dataengineering/comments/1mfnphn/best_certifications_to_take_for_a_data_engineer/,0.71,False,False,False,False
+1mf0d1m,Monthly General Discussion - Aug 2025,"This thread is a place where you can share things that might not warrant their own thread. It is automatically posted each month and you can find previous threads in the collection.
+
+Examples:
+
+* What are you working on this month?
+* What was something you accomplished?
+* What was something you learned recently?
+* What is something frustrating you currently?
+
+As always, sub rules apply. Please be respectful and stay curious.
+
+**Community Links:**
+
+* [Monthly newsletter](https://dataengineeringcommunity.substack.com/)
+* [Data Engineering Events](https://dataengineering.wiki/Community/Events)
+* [Data Engineering Meetups](https://dataengineering.wiki/Community/Meetups)
+* [Get involved in the community](https://dataengineering.wiki/Community/Get+Involved)",2,0,AutoModerator,2025-08-01 16:00:49,https://www.reddit.com/r/dataengineering/comments/1mf0d1m/monthly_general_discussion_aug_2025/,0.76,False,False,False,True
+1mfjof8,Is data engineering just backend distributed systems?,"I'm doing a take home right now and I feel like its ETL from pubsub. I've never had a pure data engineering role but I've worked with kafka previously.
+
+The take home just feels like backend distributed systems with postgres, and pub sub.  Need to hande deduplicates, exactly once processing, think about horizontal scaling, ensure idempotence behavior ...
+
+The role title is ""distributed systems engineer"", not data engineer, or backend engineer.
+
+I feel like I need to use apache arrow for the transformation yet they said ""it should only take 4 hours"" - I think I've spent about 20 on it because my postgres / sql isn't to sharp and I had to learn pub sub.",1,2,Willing_Sentence_858,2025-08-02 06:34:10,https://www.reddit.com/r/dataengineering/comments/1mfjof8/is_data_engineering_just_backend_distributed/,0.54,False,False,False,False
+1mfihcz,Best Master for my background?,"Hey all. I’m 31M from EU finishing my BBA-Econ degree.
+
+My question: is possible with a Master degree maybe something like Data Science to break into AI Engineer roles. I know a case (guy that previously worked at MBB consulting firm without STEM background).
+
+Or I should stick to more DA, Product roles? Less technical.
+
+If Any what masters or skills are needed given my profile. I studied Algebra, Calculus, Financial Maths, Stats & Stats II, Intro to Econometrics, Econometrics II in my degree. 
+
+Thanks!",1,0,Prior-Actuator-8110,2025-08-02 05:21:13,https://www.reddit.com/r/dataengineering/comments/1mfihcz/best_master_for_my_background/,0.6,False,False,False,False
+1mfoitd,Need Guidance : Oracle GoldenGate to Data Engineer,"I’m currently working as an Oracle GoldenGate (GG) Administrator. Most of my work involves setting up and managing replication from Oracle databases to Kafka and MongoDB. I handle extract/replicat configuration, monitor lag, troubleshoot replication errors, and work on schema-level syncs.
+
+Now I’m planning to transition into a Data Engineering role — something that’s more aligned with building data pipelines, transformations, and working with large-scale data systems.
+
+I’d really appreciate some guidance from those who’ve been down a similar path or work in the data field:
+
+1. What key skills should I focus on?
+
+2. How can I leverage my 2 years of GG experience?
+
+3. Certifications or Courses you recommend?
+
+4. Is it better to aim for junior DE roles?
+
+",0,2,Ill_Swimmer3873,2025-08-02 11:44:25,https://www.reddit.com/r/dataengineering/comments/1mfoitd/need_guidance_oracle_goldengate_to_data_engineer/,0.33,False,False,False,False
+1mfmvyl,Newbie to Dataengineering,"I’m new to programming and am thinking seriously about building a career in data engineering. Honestly, I consider myself a very average person—no special background in coding or tech—and I’m a bit scared about whether I’ll really be able to survive and grow in the IT industry as a data engineer.
+One thing that worries me is that what we learn (from courses, tutorials, etc.) often feels totally different from the real day-to-day work companies expect us to do. My only concern is whether I’ll actually be able to handle daily tasks and meet expectations once I get a job.
+For those who started out as beginners or felt uncertain, how did you manage these challenges? What helped you bridge the gap between learning and actually working? Are there realistic paths and resources for someone like me? Any advice or encouragement would be much appreciated!",0,1,Comfortable_Will_327,2025-08-02 10:03:32,https://www.reddit.com/r/dataengineering/comments/1mfmvyl/newbie_to_dataengineering/,0.5,False,False,False,False
+1mf12v0,What degree should I pursue?,"I’m going into college soon, and I’m not exactly sure what I should pursue as an associates. My community college only has computer science bachelor transfers, so I was wondering what I should do for my associates?",0,1,peachmilq,2025-08-01 16:27:40,https://www.reddit.com/r/dataengineering/comments/1mf12v0/what_degree_should_i_pursue/,0.4,False,False,False,False
+1mf6mor,Looking for some beta tester for Agile Data Modeling app for PowerBI users,"There’s a new agile data modeling tool in beta, built for Power BI users. It aims to simplify data model creation, automate report updates, and improve data blending and visualization workflows. Looking for someone to test it and share feedback. If interested, please send a private message for details. Thanks!",0,0,Muted_Jellyfish_6784,2025-08-01 20:00:09,https://www.reddit.com/r/dataengineering/comments/1mf6mor/looking_for_some_beta_tester_for_agile_data/,0.44,False,False,False,False
+1mfca3k,Do I need to get a masters to start a career in data science/engineering?,"I’m going to be a senior in college next year, and I’m wondering if I should focus on applying to jobs or applying to grad school. I’ve had 2 relevant internships, the first being more ML/research focused and the second being more focused on web development involving database management. I’m graduating as a cs and math double major. Is this enough to realistically get a job in the data industry, or do I need a masters? I eventually want to get a PHD and do research/work at a uni but optimally I’d like to get industry experience first. Thanks.",0,12,lemon21212121,2025-08-02 00:01:14,https://www.reddit.com/r/dataengineering/comments/1mfca3k/do_i_need_to_get_a_masters_to_start_a_career_in/,0.2,False,False,False,False
+1mewifo,"Should Engineers Pick their Storage Engine, or should the Cloud Vendor?","Databricks, a large and multi-cloud Spark service, seems to be VERY motivated in getting customers to store their data one particular DW format.  It seems odd to me, considering they are supposed to be a flexible and open-source player.
+
+Why would an open-source vendor be so close-minded about using relational databases for storage?  Personally I am NOT a fan of storing ALL data in deltatables.  Certainly that makes sense for data coming in and leaving the system (temp/bronze files on one side and gold/presentation on the other).  But using a so-called ""lakehouse format"" for all of the core DW seems like a hack.  It seems like they are trying to re-invent the concept of a relational database on top of primitive (parquet) storage files, and it seems like a really BAD idea.  I have not drunk this coolaid, and may never do so if I can avoid it.  However they are very forceful, and I beleive it is self-motivated. 
+
+It is strange that they are so forceful about demanding that customers use their own ""opensource"" format in their own unity catalog.  They obviously don't want to lose any piece of this pie, nor let their customers use an external RDBMS offering (Postgres, or Azure SQL or whatever).   I'm guessing they think they can make more profit by adding a surcharge on storage operations that pass thru Databricks ""unity catalog"" and land data in the underlying cloud storage (parquet files).
+
+  
+There are lots of things that scare me about relying \*exclusively\* on this sort of ""database-wannabe"" technology.  First of all we already have RDBMS operations teams in our IT department.  These folks have the capacity to help with DW maintenance if the ""silver layer"" is a conventional database (albeit a large one).  This is a big enough reason for a conventional database.  There are many others. It is scary to rely on such an immature ""lakehouse format"".  They haven't introduced basic things like uniqueness constraints, referential integrity, multi-table transactions with rollback on failure, and so on.  Why participate with Databricks in reinventing their vision of a large RDBMS from scratch?  Such a thing has already been available to us for decades.
+
+Databases nowadays support columnstore storage, if desired, so that can't be the ONLY motivation to drop all our data out to parquet files.",0,24,SmallAd3697,2025-08-01 13:28:45,https://www.reddit.com/r/dataengineering/comments/1mewifo/should_engineers_pick_their_storage_engine_or/,0.37,False,False,False,False

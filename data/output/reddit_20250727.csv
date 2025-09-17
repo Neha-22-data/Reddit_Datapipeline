@@ -1,0 +1,131 @@
+id,title,selftext,score,num_comments,author,created_utc,url,upvote_ratio,over_18,edited,spoiler,stickied
+1macii2,Do you care about data architecture at all?,"A long time ago, data engineers actually had to care about architecting systems to optimize the cost and speed of storage and processing.
+
+In a totally cloud-native world, do you care about any of this?  I see vendors talking about how their new data service is built on open source, is parallel, scalable, indexed, etc and I can’t tell why you would care?
+
+Don’t you only care that your team/org has X data to be stored and Y latency requirements on processing it, and give the vendor with the cheapest price for X and Y?  
+
+What are reasons that you still care about data architecture and all the debates about Lakehouse vs Warehouse, open indexes, etc?  If you don’t work at one of those vendors, why as a consumer data engineer would you care?",48,43,JasonMckin,2025-07-27 03:45:45,https://www.reddit.com/r/dataengineering/comments/1macii2/do_you_care_about_data_architecture_at_all/,0.86,False,False,False,False
+1mab3ww,An open-source alternative to Yahoo Finance's market data python APIs with higher reliability.,"Hey folks! 👋
+
+I've been working on this Python API called[ defeatbeta-api](https://github.com/defeat-beta/defeatbeta-api) that some of you might find useful. It's like yfinance but without rate limits and with some extra goodies:
+
+• Earnings call transcripts (super helpful for sentiment analysis)  
+• Yahoo stock news contents  
+• Granular revenue data (by segment/geography)  
+• All the usual yahoo finance market data stuff
+
+I built it because I kept hitting yfinance's limits and needed more complete data. It's been working well for my own trading strategies - thought others might want to try it too.
+
+Happy to answer any questions or take feature requests!",39,11,Mammoth-Sorbet7889,2025-07-27 02:30:15,https://www.reddit.com/r/dataengineering/comments/1mab3ww/an_opensource_alternative_to_yahoo_finances/,0.94,False,False,False,False
+1madx18,Company’s AWS environment is messy as hell.,"Joined a new company recently as a data engineer, this company is trying to set up a data warehouse or lake house and is still in the process of discussing. They have AWS environment that they are intending to set up the data warehouse on, but the problem is there are multiple people having access to the environment. In there, we have resources that are spin up by business analysts, data analysts and project managers. There is no clear traceability for the resources as they weren’t deployed using iaac and instead directly on aws console, just imagine a crazy amount of resources like S3, EC2, Lambdas all deployed in silos with no code base to trace them to projects. The only traceable ones are those that are deployed by the data engineering team. 
+
+My question is, how should we be dealing with the clean up for this environment before we commence with the set up of data warehouse? Do we still give access to the different parties or we should revoke their access to govern and control our warehouse? This has been giving me a big headache when I see all sorts of resources, from production to pet projects to trial and error things in our cloud environment.  ",31,13,DeluIuSoIulu,2025-07-27 05:04:53,https://www.reddit.com/r/dataengineering/comments/1madx18/companys_aws_environment_is_messy_as_hell/,1.0,False,False,False,False
+1maloa5,Leaving a Company Where I’m the Only One Who Knows How Things Work. Advice?,"Hey all,
+I’m in a bit of a weird spot and wondering if anyone else has been through something similar.
+
+I’m about to put in my two weeks at a company where, honestly, I’m the only one who knows how most of our in-house systems and processes work. I manage critical data processing pipelines that, if not handled properly, could cost the company a lot of money. These systems were built internally and never properly documented, not for lack of trying, but because we’ve been operating on a skeleton crew for years. I've asked for help and bandwidth, but it never came. That’s part of why I’m leaving: the pressure has become too much.
+
+Here’s the complication:
+
+I made the decision to accept a new job the day before I left for a long-planned vacation.
+
+My new role starts right after my trip, so I’ll be giving my notice during my vacation, meaning 1/4th of my two weeks will be PTO.
+
+I didn’t plan it like this. It’s just unfortunate timing.
+
+
+I genuinely don’t want to leave them hanging, so I plan to offer help after hours and on weekends for a few months to ensure they don’t fall apart. I want to do right by the company and my coworkers.
+
+Has anyone here done something similar, offering post-resignation support?
+
+How did you propose it?
+
+Did you charge them, and if so, how did you structure it?
+
+Do you think my offer to help after hours makes up for the shortened two-week period?
+
+Is this kind of timing faux pas as bad as it feels?
+
+
+Appreciate any thoughts or advice, especially from folks who’ve been in the “only one who knows how everything works” position.
+
+
+",35,72,WasabiBobbie,2025-07-27 12:59:37,https://www.reddit.com/r/dataengineering/comments/1maloa5/leaving_a_company_where_im_the_only_one_who_knows/,0.8,False,False,False,False
+1maijoh,What's the future of DE(Data Engineer) as Compared to an SDE,"Hi everyone,
+
+I'm currently a Data Analyst intern at an International certification company(not an IT), but the role itself is pretty new here(as it is not an IT company) and they confused it to Data Engineering, so the project I have received are mostly designing ETL/ELT pipelines, Develop API's and experiment with Orchestration tools that is compactable with their servers(for prototyping)—so I'm often figuring things out on my own. I'm passionate about becoming a strong Data Engineer and want to shape my learning path properly.
+
+That said, I've noticed that the DE tech stack is very different from what most Software Engineers use. So I’d love some advice from experienced Data Engineers -
+
+Which tools or stacks should I prioritize learning now as I have just joined this field?
+
+What does the future of Data Engineering look like over the next 3–5 years?
+
+How to boost my Carrer?
+
+Thank You",21,14,LawfulnessMammoth822,2025-07-27 10:00:46,https://www.reddit.com/r/dataengineering/comments/1maijoh/whats_the_future_of_dedata_engineer_as_compared/,0.79,False,False,False,False
+1maa1yz,checkedframe: Engine-agnostic DataFrame Validation,"Hey guys! As part of a desire to write more robust data pipelines, I built [checkedframe](https://github.com/cangyuanli/checkedframe), a DataFrame validation library that leverages narwhals to support Pandas, Polars, PyArrow, Modin, and cuDF all at once, with zero API changes. I decided to roll my own instead of using an existing one like Pandera / dataframely because I found that all the features I needed were scattered across several different existing validation libraries. At minimum, I wanted something lightweight (no Pydantic / minimal dependencies), DataFrame-agnostic, and that has a very flexible API for custom checks. I think I've achieved that, with a couple of other nice features on top (like generating a schema from existing data, filtering out failed rows, etc.), so I wanted to both share and get feedback on it! If you want to try it out, you can check out the quickstart here: https://cangyuanli.github.io/checkedframe/user_guide/quickstart.html.",13,0,YourDietitian,2025-07-27 01:36:30,https://github.com/CangyuanLi/checkedframe,0.93,False,False,False,False
+1ma67b5,Documenting Sql code using AI,"In our company we are often plagued by bad documentation or the usual problem of stale documentation for SQL codes. I was wondering how is this solved at your place. I was thinking of using AI to feed some schemas and ask it to document the sql code. In particular - it could:
+1. Identify any permanent tables created in the code
+2. Understand the source systems and the transformations specific to the script
+3. (Stretch) creating lineage of the tables.
+
+What would be the right strategy of leverage AI?",7,6,Cultural-Pound-228,2025-07-26 22:28:06,https://www.reddit.com/r/dataengineering/comments/1ma67b5/documenting_sql_code_using_ai/,0.77,False,False,False,False
+1ma19ck,App Integrations and the Data Lake,"We're trying to get away from our legacy DE tool, BO Data Services. A couple years ago we migrated our on prem data warehouse and related jobs to ADLS/Synapse/Databricks. 
+
+Our app to app integrations that didn't source from the data warehouse were out of scope for the migration and those jobs remained in BODS. Working tables and history are written to an on prem SQL server, and the final output is often csv files that are sftp'ed to the target system/vendor. For on-prem targets, sometimes the job writes the data directly in.
+
+We'll eventually drop BODS altogether, but for now we want to build any new integrations using our new suite of tools. We have our first new integration we want to build outside of BODS, but after I saw the initial architecture plan for it, I brought together a larger architect group to discuss and align on a standard for this type of use case. The design was going to use a medallion architecture in the same storage account and bronze/silver/gold containers as the data warehouse uses and write back to the same on prem SQL we've been using, so I wanted to have a larger discussion about how to design for this.
+
+We've had our initial discussion and plan on continuing early next week, and I feel like we've improved a ton on the design but still have some decisions to make, especially around storage design (storage accounts, containers, folders) and where we might put the data so that our reporting tool can read it (on-prem SQL server write back, Azure SQL database, Azure Synapse, Databricks SQL warehouse).
+
+Before we finalize our standard for app integrations, I wanted to see if anyone had any specific guidance or resources I could read up on to help us make good decisions.
+
+For more context, we don't have any specific iPaaS tools, and the integrations that we support are fine to be processed in batches (typically once a day but some several times a day), so real-time/event-based use cases are not something we need to solve for here. We'll be using Databricks Python notebooks for the logic, unity catalog managed tables for storage (ADLS), and likely piloting orchestration using Datbricks for this first integration too (orchestration has been using Azure up to now).
+
+Thanks in advance for any help!",5,3,Full_Metal_Analyst,2025-07-26 18:56:38,https://www.reddit.com/r/dataengineering/comments/1ma19ck/app_integrations_and_the_data_lake/,0.86,False,False,False,False
+1marrev,Snowflake Cost,"Traditionally, I've been using databricks, but I'm thinking about testing out snowflake.  I'm about to start researching tiers and prices, but figured id start here first.  Are there any free or community tiers I should be aware of when learning snowflake?  Are there any entry level prices that won't break the bank?",3,3,Lower_Sun_7354,2025-07-27 17:12:07,https://www.reddit.com/r/dataengineering/comments/1marrev/snowflake_cost/,1.0,False,False,False,False
+1mab4qd,Timeseries Data Egression from Splunk,"I've been tasked with reducing the storage space on Splunk as a cost saving measure. For this workload, all the data is financial timeseries data. I am thinking that to archive historical data into parquet files based on the dates, and using DuckDB and/or Python to perform analytical workload. Have anyone deal with this situation before? Much appreciated for any feedback!  ",3,0,Objective_Notice_271,2025-07-27 02:31:26,https://www.reddit.com/r/dataengineering/comments/1mab4qd/timeseries_data_egression_from_splunk/,0.81,False,False,False,False
+1ma4aip,Workflow Questions,"Hey everyone. Wanting to get people’s thoughts on a workflow I want to try out. We don’t have a great corporate system/policy. We have an On prem server with two SQL instances. One instance runs two softwares that generate our data and analysts write their own SQL code/logic or connects db/table to Power BI and does all the transformation there. I want to get far away from this process. There is no code review and power bi reports have ton of logic that no one but the analyst knows about. I want to have sql query code review and strict policies on how to design reports. Code review being one of them. We also have analysts write Python scripts that connect to db, write code with logic and then load back into sql database. Again no version control there. It’s really the Wild West. What are yalls recommendations on getting things under control. I’m thinking dbt for SQL or git for Python. I’m also thinking if the data lives in db then all code must be in SQL. ",3,3,looking_for_info7654,2025-07-26 21:04:35,https://www.reddit.com/r/dataengineering/comments/1ma4aip/workflow_questions/,0.81,False,False,False,False
+1mag0x8,Questions for Data Engineers in Insurance domain,"Hi, I am a data engineer with around 2 years of experience in consulting. I have a couple of questions for a data engineer, especially in the insurance domain. I am thinking of switching to the insurance domain.
+
+
+
+\- What kind of datasets do you work with on a day-to-day basis, and where do these datasets come from?  
+
+\- What kind of projects do you work on? For example, in consulting, I work on Market Mix Modeling, where we analyze the market spend of companies on different advertising channels, like traditional media channels vs. online media sales channels.  
+
+\- What KPIs are you usually working on, and how are you reporting them to clients or for internal use?  
+
+\- What are some problems or pain points you usually face during a project?",2,2,p4prabhat,2025-07-27 07:14:37,https://www.reddit.com/r/dataengineering/comments/1mag0x8/questions_for_data_engineers_in_insurance_domain/,0.67,False,False,False,False
+1marnw3,Dimensional Modeling Periodic Snapshot Standard Practices,"Our company is relatively new to using dimensional models but we have a need for viewing account balances at certain points in time. Our company has billions of customer accounts so to take daily snapshots of these balances would be millions per day (excluding 0 dollar balances because our business model closes accounts once reaching 0). What I've imagined was creating a periodic snapshot fact table where the balance for each account would utilize the snapshot from the end of the day but only include rows for end of week, end of month, and yesterday (to save memory and processing for days we are not interested in); then utilize a flag in the date dimension table to filter to monthly dates, weekly dates, or current data. I know standard periodic snapshot tables have predefined intervals; to me this sounds like a daily snapshot table that utilizes the dimension table to filter to the dates you're interested in. My leadership seems to feel that this should be broken out into three different fact tables (current, weekly, monthly). I feel that this is excessive because it's the same calculation (all time balance at end of day) and could have overlap (i.e. yesterday could be end of week and end of month). Since this is balances at a point in time at end of day and there is no aggregations to achieve ""weekly"" or ""monthly"" data, what is standard practice here? Should we take leadership's advice or does it make more sense the way I envisioned it? Either way can someone give me some educational texts to support your opinions for this scenario?",1,2,Boltonet12,2025-07-27 17:08:25,https://www.reddit.com/r/dataengineering/comments/1marnw3/dimensional_modeling_periodic_snapshot_standard/,1.0,False,False,False,False
+1maqe1u,Autovacuum Tuning: Stop Table Bloat Before It Hurts,[https://medium.com/@rohansodha10/autovacuum-tuning-stop-table-bloat-before-it-hurts-0e39510d0804?sk=57defbd7f909a121b958ea4a536c7f81](https://medium.com/@rohansodha10/autovacuum-tuning-stop-table-bloat-before-it-hurts-0e39510d0804?sk=57defbd7f909a121b958ea4a536c7f81),0,1,Temporary_Depth_2491,2025-07-27 16:17:59,https://www.reddit.com/r/dataengineering/comments/1maqe1u/autovacuum_tuning_stop_table_bloat_before_it_hurts/,0.5,False,False,False,False
+1majljq,What is the most efficient way to query data from SQL server and dump batches of these into CSVs on SharePoint online?,"We have an on prem SQL server and want to dump data in batches from it to CSV files on our organization’s SharePoint. 
+
+The tech we have with us is Azure databricks, ADF and ADLS. 
+
+Thanks in advance for your advice!",0,40,mysterioustechie,2025-07-27 11:06:31,https://www.reddit.com/r/dataengineering/comments/1majljq/what_is_the_most_efficient_way_to_query_data_from/,0.44,False,False,False,False
+1maopsk,"Moved to London to chase data pipelines. Tutorials are cute, but I want the real stuff.","Hey folks,
+
+Just landed in London for my Master’s and plotting my way into data engineering.
+
+Been stacking up SQL, Python, Airflow, Kafka, and dbt, doing all the “right” things on paper. But honestly? Tutorials are like IKEA manuals. Everything looks easy until you build your first pipeline and it catches fire while you’re asleep. 😅
+
+So I’m here to ask the real ones:
+	•	What do you actually use day-to-day as a DE in the UK?
+	•	What threw you off when you started, things no one warns about?
+	•	If you were starting again, what would you skip or double down on?
+
+I’m not here to beg for job leads, I just want to think like a real engineer, not a course junkie.
+
+If you’re working on a side project and wouldn’t mind letting a caffeine-powered newbie shadow or help out, I’ll bring coffee, curiosity, and possibly snacks. ☕🧠🍪
+
+Cheers from East London 👋
+(And thanks in advance for dropping your wisdom bombs)",0,11,Electronic_Tip_5051,2025-07-27 15:11:27,https://www.reddit.com/r/dataengineering/comments/1maopsk/moved_to_london_to_chase_data_pipelines_tutorials/,0.39,False,False,False,False
+1maj6jg,How does one break into DE with a commerce degree at 30,"Hello DEs, how are ya ? I want to move into a DE role. My current role in customer service doesn't fulfill me. I'm not a beginner in programming. I self taught SQL python,pandas, airflow and kafka to myself. Currently, dabbling in Pyspark. Built 3 end to the end projects.
+There's a self doubt that the engineers are gonna be better than me at DE and will my CV be thrown into the bin at the first glance.
+
+What skills do I need more to become a DE?
+
+Any input will be greatly appreciated.",0,12,Total_Protection5317,2025-07-27 10:41:46,https://www.reddit.com/r/dataengineering/comments/1maj6jg/how_does_one_break_into_de_with_a_commerce_degree/,0.35,False,False,False,False
