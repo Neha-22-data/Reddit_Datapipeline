@@ -13,7 +13,7 @@ This pipeline is structured to accomplish the following tasks:
 ![Pipeline Architecture](RedditDataEngineering.png)
 
 ## Components - 
-- Docker: Containerization platform that packages applications and their dependencies
+**- Docker:** Containerization platform that packages applications and their dependencies
 - Apache Airflow: orchestrator for scheduling and managing ETL workflows
 - Celery: Facilitates distributed task execution, enhancing scalability and performance
 - PostgreSQL: Utilized for intermediate data storage and manipulation
